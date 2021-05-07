@@ -1,0 +1,14 @@
+<form>
+	<fieldset>
+		<legend>FormComponent</legend>
+		<p>
+			Vstup: <input type="text" [formControl]="vstup" />
+      <!--
+        [formControl] => https://angular.io/api/forms/FormControlDirective#selectors
+      -->
+    </p>
+    <p>
+      Uživatel napsal: {{ vstup.value }}
+    </p>
+  </fieldset>
+</form>

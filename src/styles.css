@@ -1,0 +1,10 @@
+@media (orientation: landscape) { 
+  h1 { color: blue } 
+}
+@media (orientation: portrait) { 
+  h1 { color: green } 
+}
+
+body {
+  font-family: sans-serif;
+}

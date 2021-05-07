@@ -11,10 +11,12 @@ export class DataTransmitterService {
     
     this.valueToTransmit = "test";
   }
+/*  
   public get getValue() {
     return this.valueToTransmit;
   }
   public set setValue(value) {
     value = this.valueToTransmit;
   }
+*/
 }

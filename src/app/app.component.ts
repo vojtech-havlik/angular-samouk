@@ -5,7 +5,6 @@ import { Injectable } from '@angular/core';
   selector: "web-app",
   templateUrl: "./app.component.html",
   //styleUrls: ["./app.component.css"]
-  //komentář
 })
 
 export class AppComponent {

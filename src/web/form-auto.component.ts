@@ -16,8 +16,8 @@ export class FormComponent {
     //console.log(this.data.getValue); // getter funguje
     this.vstup.valueChanges.subscribe(vstup => {
       console.log(vstup);
-      this.data.setValue = vstup; // setter nefunguje
-      console.log(this.data.getValue); // getter
+      //this.data.setValue = vstup; // setter nefunguje
+      //console.log(this.data.getValue); // getter
     });
   }
 }

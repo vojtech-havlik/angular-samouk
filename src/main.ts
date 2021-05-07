@@ -22,6 +22,7 @@ function bootstrapModuleDecision() {
     //console.log(urlTest);
     platformBrowserDynamic().bootstrapModule(WebModule).then(ref => {
       // Ensure Angular destroys itself on hot reloads.
+      let window: any;
       if (window['ngRef']) {
         window['ngRef'].destroy();
       }
@@ -33,6 +34,7 @@ function bootstrapModuleDecision() {
     console.log("AppModule ("+urlApp+")");
     platformBrowserDynamic().bootstrapModule(AppModule).then(ref => {
       // Ensure Angular destroys itself on hot reloads.
+      let window: any;
       if (window['ngRef']) {
         window['ngRef'].destroy();
       }

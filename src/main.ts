@@ -9,24 +9,21 @@ function bootstrapModuleDecision() {
   let urlNow: string;
   let urlWeb: string;
   let urlApp: string;
-
   //let urlTest: string;
   //urlTest = window.location.href;
   urlNow = window.location.href;
   urlWeb = "https://angular-samouk.stackblitz.io/";
   urlApp = "https://angular-samouk.stackblitz.io/app.html";
-  //urlWeb = "https://angular-samouk.stackblitz.io";
-  //urlApp = "https://angular-samouk.stackblitz.io/app.html";
+  
   if (urlNow === urlWeb) {
     console.log("WebModule ("+urlWeb+")");
     //console.log(urlTest);
     platformBrowserDynamic().bootstrapModule(WebModule).then(ref => {
       // Ensure Angular destroys itself on hot reloads.
-      //let window: any;
-      if (window['ref']) {
-        window['ref'].destroy();
+      if (window['ngRef']) {
+        window['ngRef'].destroy();
       }
-      window['ref'] = ref;
+      window['ngRef'] = ref;
       // Otherwise, log the boot error
     }).catch(err => console.error(err));
   }
@@ -34,11 +31,10 @@ function bootstrapModuleDecision() {
     console.log("AppModule ("+urlApp+")");
     platformBrowserDynamic().bootstrapModule(AppModule).then(ref => {
       // Ensure Angular destroys itself on hot reloads.
-      //let window: any;
-      if (window['ref']) {
-        window['ref'].destroy();
+      if (window['ngRef']) {
+        window['ngRef'].destroy();
       }
-      window['ref'] = ref;
+      window['ngRef'] = ref;
       // Otherwise, log the boot erro
     }).catch(err => console.error(err));
   }
@@ -48,14 +44,3 @@ function bootstrapModuleDecision() {
 }
 
 bootstrapModuleDecision();
-
-/*
-platformBrowserDynamic().bootstrapModule(AppModule).then(ref => {
-  // Ensure Angular destroys itself on hot reloads.
-  if (window['ngRef']) {
-    window['ngRef'].destroy();
-  }
-  window['ngRef'] = ref;
-  // Otherwise, log the boot error
-}).catch(err => console.error(err));
-*/

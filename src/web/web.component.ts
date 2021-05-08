@@ -9,13 +9,14 @@ import { HelloComponent } from "./hello.component";
 
 export class WebComponent {
   public name: string;
+  public hello: HelloComponent;
   constructor() {
     console.log("Class \"WebComponent\" was instantiated.");
-    //this.name = "Angular " + VERSION.major;
     this.name = "Angular " + VERSION.major;
-    //HelloComponent.prototype.setName = this.name;
-    HelloComponent.prototype.setName = this.name;
     console.log(this.name);
-    console.log(HelloComponent.prototype.getName);
+    this.hello = new HelloComponent();
+    this.hello.setName = this.name;
+    console.log(this.name);
+    console.log(this.hello.getName);
   }
 }

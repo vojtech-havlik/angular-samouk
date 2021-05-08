@@ -6,17 +6,17 @@ import { WebComponent } from "./web.component";
   template: `<h1>Ahoj vývojáři projektu v {{name}}!</h1>`,
   styles: [`h1 { font-family: sans-serif; }`]
 })
-
+// zkusit použít prostředníka <pozdrav.service>, který po stisknutí tlačítka vezme z <web.component> řetězec s pozdravem a předá ho k zobrazení <ahoj.component>
 export class HelloComponent{
   public name: string;
   constructor(){
-    this.name = this.getName;
+    this.name = name;
     console.log("Class \"HelloComponent\" was instantiated.");
   }
   set setName(value: string){
-    value = this.name;
+    value = name;
   }
   get getName(){
-    return this.name;
+    return name;
   }
 }

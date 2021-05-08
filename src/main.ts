@@ -1,5 +1,6 @@
 import './polyfills';
 
+import { enableProdMode } from '@angular/core';
 import { platformBrowserDynamic } from '@angular/platform-browser-dynamic';
 
 import { WebModule } from './web/web.module';
@@ -21,11 +22,11 @@ function bootstrapModuleDecision() {
     //console.log(urlTest);
     platformBrowserDynamic().bootstrapModule(WebModule).then(ref => {
       // Ensure Angular destroys itself on hot reloads.
-      let window: any;
-      if (window['ngRef']) {
-        window['ngRef'].destroy();
+      //let window: any;
+      if (window['0']) {
+        window['0'].destroy();
       }
-      window['ngRef'] = ref;
+      window['0'] = ref;
       // Otherwise, log the boot error
     }).catch(err => console.error(err));
   }
@@ -33,11 +34,11 @@ function bootstrapModuleDecision() {
     console.log("AppModule ("+urlApp+")");
     platformBrowserDynamic().bootstrapModule(AppModule).then(ref => {
       // Ensure Angular destroys itself on hot reloads.
-      let window: any;
-      if (window['ngRef']) {
-        window['ngRef'].destroy();
+      //let window: any;
+      if (window['0']) {
+        window['0'].destroy();
       }
-      window['ngRef'] = ref;
+      window['0'] = ref;
       // Otherwise, log the boot erro
     }).catch(err => console.error(err));
   }

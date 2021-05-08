@@ -1,6 +1,5 @@
 import './polyfills';
 
-import { enableProdMode } from '@angular/core';
 import { platformBrowserDynamic } from '@angular/platform-browser-dynamic';
 
 import { WebModule } from './web/web.module';
@@ -10,6 +9,7 @@ function bootstrapModuleDecision() {
   let urlNow: string;
   let urlWeb: string;
   let urlApp: string;
+
   //let urlTest: string;
   //urlTest = window.location.href;
   urlNow = window.location.href;
@@ -23,10 +23,10 @@ function bootstrapModuleDecision() {
     platformBrowserDynamic().bootstrapModule(WebModule).then(ref => {
       // Ensure Angular destroys itself on hot reloads.
       //let window: any;
-      if (window['0']) {
-        window['0'].destroy();
+      if (window['ref']) {
+        window['ref'].destroy();
       }
-      window['0'] = ref;
+      window['ref'] = ref;
       // Otherwise, log the boot error
     }).catch(err => console.error(err));
   }
@@ -35,10 +35,10 @@ function bootstrapModuleDecision() {
     platformBrowserDynamic().bootstrapModule(AppModule).then(ref => {
       // Ensure Angular destroys itself on hot reloads.
       //let window: any;
-      if (window['0']) {
-        window['0'].destroy();
+      if (window['ref']) {
+        window['ref'].destroy();
       }
-      window['0'] = ref;
+      window['ref'] = ref;
       // Otherwise, log the boot erro
     }).catch(err => console.error(err));
   }

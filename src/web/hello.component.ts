@@ -1,4 +1,5 @@
 import { Component, Input } from "@angular/core";
+import { WebComponent } from "./web.component";
 
 @Component({
   selector: 'hello',
@@ -6,16 +7,16 @@ import { Component, Input } from "@angular/core";
   styles: [`h1 { font-family: sans-serif; }`]
 })
 
-export class HelloComponent {
+export class HelloComponent{
   public name: string;
   constructor(){
     this.name = this.getName;
     console.log("Class \"HelloComponent\" was instantiated.");
   }
-  set setName(name: string){
-    name = this.name;
+  set setName(value: string){
+    value = this.name;
   }
   get getName(){
-    return name;
+    return this.name;
   }
 }

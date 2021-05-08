@@ -1,5 +1,5 @@
 import { Component, VERSION } from "@angular/core";
-import { Injectable } from '@angular/core';
+import { HelloComponent } from "./hello.component";
 
 @Component({
   selector: "web-app",
@@ -8,8 +8,10 @@ import { Injectable } from '@angular/core';
 })
 
 export class WebComponent {
+  public name: string;
   constructor() {
     console.log("Class \"WebComponent\" was instantiated.");
+    this.name = "Angular " + VERSION.major;
+    HelloComponent.prototype.setName = this.name;
   }
-  name = "Angular " + VERSION.major;
 }

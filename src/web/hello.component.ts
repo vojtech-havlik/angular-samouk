@@ -9,8 +9,9 @@ import { WebComponent } from "./web.component";
 // zkusit použít prostředníka <pozdrav.service>, který po stisknutí tlačítka vezme z <web.component> řetězec s pozdravem a předá ho k zobrazení <ahoj.component>
 export class HelloComponent{
   public name: string;
+  Input(){ name } //public name: string;
   constructor(){
-    this.name = name;
+    /this.name = name;
     console.log("Class \"HelloComponent\" was instantiated.");
   }
   set setName(value: string){

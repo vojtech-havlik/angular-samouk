@@ -13,10 +13,10 @@ export class WebComponent {
   constructor() {
     console.log("Class \"WebComponent\" was instantiated.");
     this.name = "Angular " + VERSION.major;
-    console.log(this.name);
+    //console.log(this.name);
     this.hello = new HelloComponent();
-    this.hello.setName = this.name;
-    console.log(this.name);
+    //this.hello.setName = this.name;
+    //console.log(this.name);
     console.log(this.hello.getName);
   }
 }
